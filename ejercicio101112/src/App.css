@@ -1,0 +1,17 @@
+.App {
+  text-align: center;
+}
+
+.containerComponent {
+  display: flex;
+  justify-content: space-around
+}
+
+
+.BoxComponent {
+  background-color: black;
+  height: 255px;
+  width: 255px;
+  position: absolute;
+  top: 100px;
+}
