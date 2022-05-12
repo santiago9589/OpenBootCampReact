@@ -30,24 +30,26 @@ const FormTask = ({ createTask }) => {
     }
 
     const addTask = (task) => {
-        let newTask = new Task(task)
-        createTask(newTask)
-    }
+       createTask(task)
 
+    }
+    
     return (
         <Formik
             initialValues={initialTask}
             validationSchema={TaskSchema}
             onSubmit={(values) => {
+
                 addTask(values)
+               
             }}
         >
-            {({ errors, touched, values }) => (
+            {({ errors, touched}) => (
                 <Form>
-
-                    <div class="mb-3">
-                        <label for="name" class="form-label">Name</label>
-                        <Field type="text" class="form-control" id="name" placeholder="name" name="name" />
+                    
+                    <div className="mb-3">
+                        <label htmlFor="name" className="form-label">Name</label>
+                        <Field type="text" className="form-control" id="name" placeholder="name" name="name" />
                         {
                             errors.name && touched.name && (
 
@@ -57,9 +59,9 @@ const FormTask = ({ createTask }) => {
 
                     </div>
 
-                    <div class="mb-3">
-                        <label for="description" class="form-label">Description</label>
-                        <Field type="text" class="form-control" id="description" placeholder="description" name="description" />
+                    <div className="mb-3">
+                        <label htmlFor="description" className="form-label">Description</label>
+                        <Field type="text" className="form-control" id="description" placeholder="description" name="description" />
                         {
                             errors.description && touched.description && (
 
@@ -68,17 +70,17 @@ const FormTask = ({ createTask }) => {
                         }
                     </div>
 
-                    <div class="mb-3">
-                        <label for="formGroupExampleInput" class="form-label">Select Status</label>
-                        <select class="form-select" aria-label="Default select example">
-                            <option value="normal">Normal</option>
-                            <option value="urgent">Urgent</option>
-                            <option value="blocking">Blocking</option>
+                    <div className="mb-3">
+                        <label htmlFor="formGroupExampleInput" className="form-label">Select Status</label>
+                        <select className="form-select" aria-label="Default select example">
+                            <option value="normal" name="normal" >Normal</option>
+                            <option value="urgent"  name="urgent">Urgent</option>
+                            <option value="blocking"  name="blocking">Blocking</option>
                         </select>
                     </div>
 
-                    <div class="mb-3">
-                        <button type="submit" class="btn btn-primary btn-lg">Crear Tarea</button>
+                    <div className="mb-3">
+                        <button type="submit" className="btn btn-primary btn-lg">Enviar</button>
                     </div>
                 </Form>
 

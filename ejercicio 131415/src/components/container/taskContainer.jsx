@@ -27,7 +27,7 @@ const TaskContainer = () => {
     const createTask = (task) => {
 
         let taskCopied = [...tasks];
-        taskCopied.push(task.name)
+        taskCopied.push(task)
         setTaks(taskCopied)
 
     }
